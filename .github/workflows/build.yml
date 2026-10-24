@@ -1,0 +1,70 @@
+# MS20XXL: every push builds the plugin (armv7) and the skin, runs the offline tests, packages the release zip,
+# checks it (catalog_check + `sh -n` on install.sh/uninstall.sh, the L'Cronx apostrophe) and keeps it as a run
+# artifact. "Run workflow" with a version also publishes the GitHub release with that zip: pushing a v* tag does the same.
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to publish, e.g. 0.1.2 (empty = build only)
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Tools (Pillow, numpy, Zig)
+        run: python3 -m pip install --quiet pillow numpy ziglang
+      - name: Build
+        run: ./build.sh
+      - name: Offline tests (engine under ASan/UBSan, host test)
+        run: bash test/run_tests.sh
+      - name: Package
+        run: |
+          V="${{ inputs.version }}"; [ "$GITHUB_REF_TYPE" = tag ] && V="${GITHUB_REF_NAME#v}"; V="${V:-0.0.${GITHUB_RUN_NUMBER}}"; echo "VERSION=$V" >> "$GITHUB_ENV"   # catalog versions are X.Y.Z; CI-only builds are 0.0.<run>
+          python3 third_party/mpc-vst-plugins/tools/release.py --so build/arm/ms20xxl.so \
+            --skin "build/package/L'Cronx - VST - MS20XXL" --entry build/pluginlist-entry.xml --version "$V" \
+            --about "Korg MS-20-style semi-modular mono synth, circuit-modelled from the MS-20 schematics, with an SQ-10-style step sequencer and a touch patch panel" \
+            --repo sunskiefer/MS20XXL --license GPL-3.0-or-later --id ms20xxl -o dist
+          python3 third_party/mpc-vst-plugins/tools/catalog_check.py dist/*.zip --catalog
+      - name: Installer syntax (sh -n) and the L'Cronx apostrophe
+        run: |
+          set -e
+          for z in dist/*.zip; do
+            d=$(mktemp -d); unzip -q "$z" -d "$d"
+            find "$d" \( -name install.sh -o -name uninstall.sh \) -print0 | while IFS= read -r -d '' s; do
+              sh -n "$s" && echo "sh -n OK: $s"
+            done
+            n=$(find "$d" \( -name install.sh -o -name uninstall.sh \) | wc -l); [ "$n" -ge 2 ] || { echo "installer missing in $z"; exit 1; }
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MS20XXL-${{ github.run_number }}
+          path: dist/*.zip
+          retention-days: 30
+      - name: Publish release (tag push v*, or Run workflow with a version)
+        if: ${{ github.ref_type == 'tag' || inputs.version != '' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION }}
+          target_commitish: ${{ github.sha }}
+          name: MS20XXL ${{ env.VERSION }}
+          make_latest: true
+          prerelease: false
+          draft: false
+          files: dist/*-mpc-armv7.zip
+          body: "MS20XXL for Force / MPC OS by L'Cronx. Install: unzip, run install.sh (INSTALL.md inside), or use the MPC plugin installer."

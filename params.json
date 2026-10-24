@@ -1,0 +1,4439 @@
+{
+ "name": "MS20XXL",
+ "params": [
+  {
+   "key": "volume",
+   "name": "Volume",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 7.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "vco1_wave",
+   "name": "VCO 1 Wave Form",
+   "options": [
+    "Triangle",
+    "Sawtooth",
+    "Pulse",
+    "White Noise"
+   ],
+   "default": 1
+  },
+  {
+   "key": "vco1_pw",
+   "name": "VCO 1 PW",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "vco1_scale",
+   "name": "VCO 1 Scale",
+   "options": [
+    "32'",
+    "16'",
+    "8'",
+    "4'"
+   ],
+   "default": 2
+  },
+  {
+   "key": "vco2_wave",
+   "name": "VCO 2 Wave Form",
+   "options": [
+    "Sawtooth",
+    "Square",
+    "Pulse",
+    "Ring Mod"
+   ],
+   "default": 0
+  },
+  {
+   "key": "vco2_pitch",
+   "name": "VCO 2 Pitch",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "vco2_scale",
+   "name": "VCO 2 Scale",
+   "options": [
+    "16'",
+    "8'",
+    "4'",
+    "2'"
+   ],
+   "default": 1
+  },
+  {
+   "key": "vco1_level",
+   "name": "VCO 1 Level",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 10.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "vco2_level",
+   "name": "VCO 2 Level",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "porta",
+   "name": "Portamento Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "master_tune",
+   "name": "Master Tune",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "ct"
+  },
+  {
+   "key": "unison",
+   "name": "Unison",
+   "options": [
+    "Off",
+    "2 Voices",
+    "4 Voices"
+   ],
+   "default": 0
+  },
+  {
+   "key": "unison_detune",
+   "name": "Unison Detune",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "hpf_cutoff",
+   "name": "HPF Cutoff Frequency",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "hpf_peak",
+   "name": "HPF Peak",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "hpf_mg",
+   "name": "HPF MG/T.EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "hpf_eg2",
+   "name": "HPF EG2/EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "lpf_cutoff",
+   "name": "LPF Cutoff Frequency",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 8.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "lpf_peak",
+   "name": "LPF Peak",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "lpf_mg",
+   "name": "LPF MG/T.EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "lpf_eg2",
+   "name": "LPF EG2/EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "filter_mk",
+   "name": "Filter",
+   "options": [
+    "MK1",
+    "MK2"
+   ],
+   "default": 1
+  },
+  {
+   "key": "filter_drive",
+   "name": "Filter Drive",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fm_mg",
+   "name": "Freq Mod MG/T.EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fm_eg1",
+   "name": "Freq Mod EG1/EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "mg_wave",
+   "name": "MG Wave Form",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "mg_freq",
+   "name": "MG Frequency",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "mg_mode",
+   "name": "MG",
+   "options": [
+    "Free",
+    "Reset"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mg_sync",
+   "name": "MG Sync",
+   "options": [
+    "Free",
+    "1/1",
+    "1/2",
+    "1/4",
+    "1/8",
+    "1/16",
+    "1/32",
+    "1/4 T",
+    "1/8 T",
+    "1/16 T",
+    "1/8 .",
+    "1/16 ."
+   ],
+   "default": 0
+  },
+  {
+   "key": "pwm_mg",
+   "name": "PW Mod MG/EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "pwm_vco",
+   "name": "PW Mod To",
+   "options": [
+    "VCO 1",
+    "VCO 2"
+   ],
+   "default": 0
+  },
+  {
+   "key": "vca_mg",
+   "name": "VCA Mod MG/EXT",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "vca_vel",
+   "name": "VCA Velocity",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "vcf_vel",
+   "name": "LPF Velocity",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg1_delay",
+   "name": "EG1 Delay Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg1_attack",
+   "name": "EG1 Attack Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg1_release",
+   "name": "EG1 Release Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg1_mode",
+   "name": "EG1 Mode",
+   "options": [
+    "Normal",
+    "Trigger",
+    "Loop"
+   ],
+   "default": 0
+  },
+  {
+   "key": "eg2_hold",
+   "name": "EG2 Hold Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg2_attack",
+   "name": "EG2 Attack Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg2_decay",
+   "name": "EG2 Decay Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg2_sustain",
+   "name": "EG2 Sustain Level",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 7.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg2_release",
+   "name": "EG2 Release Time",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "eg_trig",
+   "name": "Key Trigger",
+   "options": [
+    "Single",
+    "Multi"
+   ],
+   "default": 0
+  },
+  {
+   "key": "esp_level",
+   "name": "Signal Level",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "esp_low",
+   "name": "Low Cut Freq",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "esp_high",
+   "name": "High Cut Freq",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 8.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "esp_cv",
+   "name": "CV Adjust",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "esp_thresh",
+   "name": "Threshold Level",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_speed",
+   "name": "Clock Speed",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_swing",
+   "name": "Swing",
+   "min": 50.0,
+   "max": 75.0,
+   "default": 50.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "seq_gate",
+   "name": "Gate",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_length",
+   "name": "Sequence Length",
+   "min": 1.0,
+   "max": 12.0,
+   "default": 12.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "seq_porta_ab",
+   "name": "Portamento A/B",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_porta_c",
+   "name": "Portamento C",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_sync",
+   "name": "Clock Sync",
+   "options": [
+    "Free",
+    "1/1",
+    "1/2",
+    "1/4",
+    "1/8",
+    "1/16",
+    "1/32",
+    "1/4 T",
+    "1/8 T",
+    "1/16 T",
+    "1/8 .",
+    "1/16 ."
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_mode",
+   "name": "Sequence Mode",
+   "options": [
+    "12 Loop",
+    "12 Once",
+    "24 Loop",
+    "24 Once"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_range_a",
+   "name": "Channel A",
+   "options": [
+    "+/-1 V",
+    "+/-5 V"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_range_b",
+   "name": "Channel B",
+   "options": [
+    "+/-1 V",
+    "+/-5 V"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_range_c",
+   "name": "Channel C",
+   "options": [
+    "0..+5 V",
+    "+/-12 st"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_run",
+   "name": "Run",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_transport",
+   "name": "With Transport",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_step_btn",
+   "name": "Step",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger"
+  },
+  {
+   "key": "seq_a1",
+   "name": "A 1",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a2",
+   "name": "A 2",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a3",
+   "name": "A 3",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a4",
+   "name": "A 4",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a5",
+   "name": "A 5",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a6",
+   "name": "A 6",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a7",
+   "name": "A 7",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a8",
+   "name": "A 8",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a9",
+   "name": "A 9",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a10",
+   "name": "A 10",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a11",
+   "name": "A 11",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_a12",
+   "name": "A 12",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b1",
+   "name": "B 1",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b2",
+   "name": "B 2",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b3",
+   "name": "B 3",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b4",
+   "name": "B 4",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b5",
+   "name": "B 5",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b6",
+   "name": "B 6",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b7",
+   "name": "B 7",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b8",
+   "name": "B 8",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b9",
+   "name": "B 9",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b10",
+   "name": "B 10",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b11",
+   "name": "B 11",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_b12",
+   "name": "B 12",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c1",
+   "name": "C 1",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c2",
+   "name": "C 2",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c3",
+   "name": "C 3",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c4",
+   "name": "C 4",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c5",
+   "name": "C 5",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c6",
+   "name": "C 6",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c7",
+   "name": "C 7",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c8",
+   "name": "C 8",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c9",
+   "name": "C 9",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c10",
+   "name": "C 10",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c11",
+   "name": "C 11",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_c12",
+   "name": "C 12",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "seq_pc1",
+   "name": "Porta C 1",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc2",
+   "name": "Porta C 2",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc3",
+   "name": "Porta C 3",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc4",
+   "name": "Porta C 4",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc5",
+   "name": "Porta C 5",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc6",
+   "name": "Porta C 6",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc7",
+   "name": "Porta C 7",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc8",
+   "name": "Porta C 8",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc9",
+   "name": "Porta C 9",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc10",
+   "name": "Porta C 10",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc11",
+   "name": "Porta C 11",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_pc12",
+   "name": "Porta C 12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_t1",
+   "name": "Trigger 1",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t2",
+   "name": "Trigger 2",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t3",
+   "name": "Trigger 3",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t4",
+   "name": "Trigger 4",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t5",
+   "name": "Trigger 5",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t6",
+   "name": "Trigger 6",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t7",
+   "name": "Trigger 7",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t8",
+   "name": "Trigger 8",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t9",
+   "name": "Trigger 9",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t10",
+   "name": "Trigger 10",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t11",
+   "name": "Trigger 11",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "seq_t12",
+   "name": "Trigger 12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "key_prio",
+   "name": "Key Priority",
+   "options": [
+    "Low Note",
+    "High Note",
+    "Last Note"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pb_range",
+   "name": "Pitch Bend Range",
+   "min": 0.0,
+   "max": 12.0,
+   "default": 2.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "st"
+  },
+  {
+   "key": "wheel_to",
+   "name": "Mod Wheel",
+   "options": [
+    "Wheel Jack",
+    "MG Pitch",
+    "LPF Cutoff"
+   ],
+   "default": 0
+  },
+  {
+   "key": "noise_floor",
+   "name": "Analog Noise",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "drift",
+   "name": "VCO Drift",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "sh_clock_def",
+   "name": "S&H Clock (unpatched)",
+   "options": [
+    "MG Rect",
+    "KBD Trig",
+    "Seq Trig"
+   ],
+   "default": 0
+  },
+  {
+   "key": "sh_in_def",
+   "name": "S&H Input (unpatched)",
+   "options": [
+    "White Noise",
+    "Pink Noise",
+    "MG Tri"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mom_switch",
+   "name": "Manual Control Switch",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "view",
+   "name": "View",
+   "options": [
+    "Overview",
+    "Oscillators",
+    "Filters",
+    "Modulation",
+    "Envelopes",
+    "Esp",
+    "Sequencer",
+    "Setup",
+    "Patch Panel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "nav_zoom",
+   "name": "OVERVIEW",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "nav_prev",
+   "name": "<",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "nav_next",
+   "name": ">",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_vco",
+   "name": "Go Oscillators",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_vcf",
+   "name": "Go Filters",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_mod",
+   "name": "Go Modulation",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_env",
+   "name": "Go Envelopes",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_esp",
+   "name": "Go Esp",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_seq",
+   "name": "Go Sequencer",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_setup",
+   "name": "Go Setup",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_patch",
+   "name": "Go Patch Panel",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_mg_tri",
+   "name": "Jack MG TRI",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_mg_rect",
+   "name": "Jack MG RECT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_eg1_out",
+   "name": "Jack EG1 OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_eg1_rev",
+   "name": "Jack EG1 REV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_eg2_rev",
+   "name": "Jack EG2 REV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_eg2_out",
+   "name": "Jack EG2 OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_kbd_cv",
+   "name": "Jack KBD CV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_kbd_trig",
+   "name": "Jack TRIG OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_sh_out",
+   "name": "Jack S&H OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vca_out",
+   "name": "Jack VCA OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_pink",
+   "name": "Jack PINK",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_white",
+   "name": "Jack WHITE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_wheel",
+   "name": "Jack WHEEL",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_mom",
+   "name": "Jack SWITCH",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_sig_out",
+   "name": "Jack SIGNAL OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_esp_amp",
+   "name": "Jack AMP OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_esp_bpf",
+   "name": "Jack BPF OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_esp_cv",
+   "name": "Jack F-V CV OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_esp_env",
+   "name": "Jack ENV OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_esp_trig",
+   "name": "Jack ESP TRIG",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_a",
+   "name": "Jack SEQ A",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_b",
+   "name": "Jack SEQ B",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_c",
+   "name": "Jack SEQ C",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_trig",
+   "name": "Jack SEQ TRIG",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vco1_out",
+   "name": "Jack VCO 1 OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vco2_out",
+   "name": "Jack VCO 2 OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vel",
+   "name": "Jack VEL CV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_after",
+   "name": "Jack AFTER CV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_total",
+   "name": "Jack TOTAL",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_freq",
+   "name": "Jack FREQ",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_ext_in",
+   "name": "Jack EXT SIGNAL IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_hpf_cv",
+   "name": "Jack HPF CUTOFF",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_lpf_cv",
+   "name": "Jack LPF CUTOFF",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_init_gain",
+   "name": "Jack INITIAL GAIN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vco12_cv",
+   "name": "Jack VCO 1+2 CV IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vco2_cv",
+   "name": "Jack VCO 2 CV IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_sh_clock",
+   "name": "Jack S&H CLOCK",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_sh_in",
+   "name": "Jack S&H IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vca_ctl",
+   "name": "Jack CONTROL IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_vca_in",
+   "name": "Jack VCA IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_eg1_trig",
+   "name": "Jack EG1 TRIG IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_trig_in",
+   "name": "Jack TRIG IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_esp_in",
+   "name": "Jack SIGNAL IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_clock",
+   "name": "Jack SEQ CLOCK IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_reset",
+   "name": "Jack SEQ RESET",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_mod",
+   "name": "Jack SPEED x2/V",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_seq_ss",
+   "name": "Jack SEQ START/STOP",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tap_pwm_in",
+   "name": "Jack PWM IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "pt_mg_tri",
+   "name": "Cable MG TRI",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_mg_rect",
+   "name": "Cable MG RECT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_eg1_out",
+   "name": "Cable EG1 OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_eg1_rev",
+   "name": "Cable EG1 REV",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_eg2_rev",
+   "name": "Cable EG2 REV",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_eg2_out",
+   "name": "Cable EG2 OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_kbd_cv",
+   "name": "Cable KBD CV",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_kbd_trig",
+   "name": "Cable TRIG OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_sh_out",
+   "name": "Cable S&H OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_vca_out",
+   "name": "Cable VCA OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_pink",
+   "name": "Cable PINK",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_white",
+   "name": "Cable WHITE",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_wheel",
+   "name": "Cable WHEEL",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_mom",
+   "name": "Cable SWITCH",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_sig_out",
+   "name": "Cable SIGNAL OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_esp_amp",
+   "name": "Cable AMP OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_esp_bpf",
+   "name": "Cable BPF OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_esp_cv",
+   "name": "Cable F-V CV OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_esp_env",
+   "name": "Cable ENV OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_esp_trig",
+   "name": "Cable ESP TRIG",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_seq_a",
+   "name": "Cable SEQ A",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_seq_b",
+   "name": "Cable SEQ B",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_seq_c",
+   "name": "Cable SEQ C",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_seq_trig",
+   "name": "Cable SEQ TRIG",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_vco1_out",
+   "name": "Cable VCO 1 OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_vco2_out",
+   "name": "Cable VCO 2 OUT",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_vel",
+   "name": "Cable VEL CV",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "pt_after",
+   "name": "Cable AFTER CV",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "patch_info",
+   "name": "Patch Info",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ql1",
+   "name": "Q-Link 1",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql2",
+   "name": "Q-Link 2",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql3",
+   "name": "Q-Link 3",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql4",
+   "name": "Q-Link 4",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql5",
+   "name": "Q-Link 5",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql6",
+   "name": "Q-Link 6",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql7",
+   "name": "Q-Link 7",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql8",
+   "name": "Q-Link 8",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql9",
+   "name": "Q-Link 9",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql10",
+   "name": "Q-Link 10",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql11",
+   "name": "Q-Link 11",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql12",
+   "name": "Q-Link 12",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql13",
+   "name": "Q-Link 13",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql14",
+   "name": "Q-Link 14",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql15",
+   "name": "Q-Link 15",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql16",
+   "name": "Q-Link 16",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "in_sec",
+   "name": "In Section",
+   "options": [
+    "Overview",
+    "Section"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pop_mg_sync",
+   "name": "MG Sync List",
+   "options": [
+    "Closed",
+    "Open"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pop_seq_sync",
+   "name": "Clock Sync List",
+   "options": [
+    "Closed",
+    "Open"
+   ],
+   "default": 0
+  },
+  {
+   "key": "cp_mg_tri_0",
+   "name": "Cable MG TRI 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mg_tri_1",
+   "name": "Cable MG TRI 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mg_tri_2",
+   "name": "Cable MG TRI 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mg_rect_0",
+   "name": "Cable MG RECT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mg_rect_1",
+   "name": "Cable MG RECT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mg_rect_2",
+   "name": "Cable MG RECT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg1_out_0",
+   "name": "Cable EG1 OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg1_out_1",
+   "name": "Cable EG1 OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg1_out_2",
+   "name": "Cable EG1 OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg1_rev_0",
+   "name": "Cable EG1 REV 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg1_rev_1",
+   "name": "Cable EG1 REV 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg1_rev_2",
+   "name": "Cable EG1 REV 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg2_rev_0",
+   "name": "Cable EG2 REV 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg2_rev_1",
+   "name": "Cable EG2 REV 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg2_rev_2",
+   "name": "Cable EG2 REV 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg2_out_0",
+   "name": "Cable EG2 OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg2_out_1",
+   "name": "Cable EG2 OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_eg2_out_2",
+   "name": "Cable EG2 OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_kbd_cv_0",
+   "name": "Cable KBD CV 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_kbd_cv_1",
+   "name": "Cable KBD CV 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_kbd_cv_2",
+   "name": "Cable KBD CV 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_kbd_trig_0",
+   "name": "Cable TRIG OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_kbd_trig_1",
+   "name": "Cable TRIG OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_kbd_trig_2",
+   "name": "Cable TRIG OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_sh_out_0",
+   "name": "Cable S&H OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_sh_out_1",
+   "name": "Cable S&H OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_sh_out_2",
+   "name": "Cable S&H OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vca_out_0",
+   "name": "Cable VCA OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vca_out_1",
+   "name": "Cable VCA OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vca_out_2",
+   "name": "Cable VCA OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_pink_0",
+   "name": "Cable PINK 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_pink_1",
+   "name": "Cable PINK 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_pink_2",
+   "name": "Cable PINK 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_white_0",
+   "name": "Cable WHITE 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_white_1",
+   "name": "Cable WHITE 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_white_2",
+   "name": "Cable WHITE 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_wheel_0",
+   "name": "Cable WHEEL 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_wheel_1",
+   "name": "Cable WHEEL 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_wheel_2",
+   "name": "Cable WHEEL 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mom_0",
+   "name": "Cable SWITCH 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mom_1",
+   "name": "Cable SWITCH 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_mom_2",
+   "name": "Cable SWITCH 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_sig_out_0",
+   "name": "Cable SIGNAL OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_sig_out_1",
+   "name": "Cable SIGNAL OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_sig_out_2",
+   "name": "Cable SIGNAL OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_amp_0",
+   "name": "Cable AMP OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_amp_1",
+   "name": "Cable AMP OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_amp_2",
+   "name": "Cable AMP OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_bpf_0",
+   "name": "Cable BPF OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_bpf_1",
+   "name": "Cable BPF OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_bpf_2",
+   "name": "Cable BPF OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_cv_0",
+   "name": "Cable F-V CV OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_cv_1",
+   "name": "Cable F-V CV OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_cv_2",
+   "name": "Cable F-V CV OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_env_0",
+   "name": "Cable ENV OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_env_1",
+   "name": "Cable ENV OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_env_2",
+   "name": "Cable ENV OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_trig_0",
+   "name": "Cable ESP TRIG 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_trig_1",
+   "name": "Cable ESP TRIG 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_esp_trig_2",
+   "name": "Cable ESP TRIG 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_a_0",
+   "name": "Cable SEQ A 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_a_1",
+   "name": "Cable SEQ A 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_a_2",
+   "name": "Cable SEQ A 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_b_0",
+   "name": "Cable SEQ B 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_b_1",
+   "name": "Cable SEQ B 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_b_2",
+   "name": "Cable SEQ B 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_c_0",
+   "name": "Cable SEQ C 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_c_1",
+   "name": "Cable SEQ C 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_c_2",
+   "name": "Cable SEQ C 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_trig_0",
+   "name": "Cable SEQ TRIG 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_trig_1",
+   "name": "Cable SEQ TRIG 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_seq_trig_2",
+   "name": "Cable SEQ TRIG 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vco1_out_0",
+   "name": "Cable VCO 1 OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vco1_out_1",
+   "name": "Cable VCO 1 OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vco1_out_2",
+   "name": "Cable VCO 1 OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vco2_out_0",
+   "name": "Cable VCO 2 OUT 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vco2_out_1",
+   "name": "Cable VCO 2 OUT 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vco2_out_2",
+   "name": "Cable VCO 2 OUT 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vel_0",
+   "name": "Cable VEL CV 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vel_1",
+   "name": "Cable VEL CV 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_vel_2",
+   "name": "Cable VEL CV 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_after_0",
+   "name": "Cable AFTER CV 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_after_1",
+   "name": "Cable AFTER CV 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "cp_after_2",
+   "name": "Cable AFTER CV 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "hd_0",
+   "name": "Held 1",
+   "options": [
+    "-",
+    "MG TRI",
+    "MG RECT",
+    "EG1 OUT",
+    "EG1 REV",
+    "EG2 REV",
+    "EG2 OUT",
+    "KBD CV",
+    "TRIG OUT",
+    "S&H OUT"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hd_1",
+   "name": "Held 2",
+   "options": [
+    "-",
+    "VCA OUT",
+    "PINK",
+    "WHITE",
+    "WHEEL",
+    "SWITCH",
+    "SIGNAL OUT",
+    "AMP OUT",
+    "BPF OUT",
+    "F-V CV OUT"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hd_2",
+   "name": "Held 3",
+   "options": [
+    "-",
+    "ENV OUT",
+    "ESP TRIG",
+    "SEQ A",
+    "SEQ B",
+    "SEQ C",
+    "SEQ TRIG",
+    "VCO 1 OUT",
+    "VCO 2 OUT",
+    "VEL CV"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hd_3",
+   "name": "Held 4",
+   "options": [
+    "-",
+    "AFTER CV"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hi_0",
+   "name": "Held In 1",
+   "options": [
+    "-",
+    "TOTAL",
+    "FREQ",
+    "EXT SIGNAL IN",
+    "HPF CUTOFF",
+    "LPF CUTOFF",
+    "INITIAL GAIN",
+    "VCO 1+2 CV IN",
+    "VCO 2 CV IN",
+    "S&H CLOCK"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hi_1",
+   "name": "Held In 2",
+   "options": [
+    "-",
+    "S&H IN",
+    "CONTROL IN",
+    "VCA IN",
+    "EG1 TRIG IN",
+    "TRIG IN",
+    "SIGNAL IN",
+    "SEQ CLOCK IN",
+    "SEQ RESET",
+    "SPEED x2/V"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hi_2",
+   "name": "Held In 3",
+   "options": [
+    "-",
+    "SEQ START/STOP",
+    "PWM IN"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk",
+   "name": "Patch Step",
+   "options": [
+    "Off",
+    "Choose",
+    "Pick input",
+    "Pick output",
+    "Connected"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk_t",
+   "name": "Patch Tiles",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk_c",
+   "name": "Patch Cancel Shown",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk_cancel",
+   "name": "Patch Cancel",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "pk_done",
+   "name": "Patch Done",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "pk_unplug",
+   "name": "Patch Unplug",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "esp_peak",
+   "name": "ESP Peak",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_step_lo",
+   "name": "Seq Step 1-6",
+   "options": [
+    "-",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_step_hi",
+   "name": "Seq Step 7-12",
+   "options": [
+    "-",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+   ],
+   "default": 0
+  },
+  {
+   "key": "seq_running",
+   "name": "Seq Running",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  }
+ ],
+ "sections": [
+  {
+   "label": "OSCILLATORS",
+   "keys": [
+    "vco1_wave",
+    "vco1_pw",
+    "vco1_scale",
+    "vco2_wave",
+    "vco2_pitch",
+    "vco2_scale",
+    "vco1_level",
+    "vco2_level",
+    "porta",
+    "master_tune",
+    "unison",
+    "unison_detune"
+   ]
+  },
+  {
+   "label": "FILTERS",
+   "keys": [
+    "hpf_cutoff",
+    "hpf_peak",
+    "hpf_mg",
+    "hpf_eg2",
+    "lpf_cutoff",
+    "lpf_peak",
+    "lpf_mg",
+    "lpf_eg2",
+    "filter_mk",
+    "filter_drive"
+   ]
+  },
+  {
+   "label": "MODULATION",
+   "keys": [
+    "fm_mg",
+    "fm_eg1",
+    "mg_wave",
+    "mg_freq",
+    "mg_mode",
+    "mg_sync",
+    "pwm_mg",
+    "pwm_vco",
+    "vca_mg",
+    "vca_vel",
+    "vcf_vel"
+   ]
+  },
+  {
+   "label": "ENVELOPES",
+   "keys": [
+    "eg1_delay",
+    "eg1_attack",
+    "eg1_release",
+    "eg1_mode",
+    "eg2_hold",
+    "eg2_attack",
+    "eg2_decay",
+    "eg2_sustain",
+    "eg2_release",
+    "eg_trig"
+   ]
+  },
+  {
+   "label": "ESP",
+   "keys": [
+    "esp_level",
+    "esp_low",
+    "esp_high",
+    "esp_cv",
+    "esp_thresh"
+   ]
+  },
+  {
+   "label": "SEQUENCER",
+   "keys": [
+    "seq_speed",
+    "seq_swing",
+    "seq_gate",
+    "seq_length",
+    "seq_porta_ab",
+    "seq_porta_c",
+    "seq_sync",
+    "seq_mode",
+    "seq_range_a",
+    "seq_range_b",
+    "seq_range_c",
+    "seq_run",
+    "seq_transport",
+    "seq_step_btn",
+    "seq_a1",
+    "seq_a2",
+    "seq_a3",
+    "seq_a4",
+    "seq_a5",
+    "seq_a6",
+    "seq_a7",
+    "seq_a8",
+    "seq_a9",
+    "seq_a10",
+    "seq_a11",
+    "seq_a12",
+    "seq_b1",
+    "seq_b2",
+    "seq_b3",
+    "seq_b4",
+    "seq_b5",
+    "seq_b6",
+    "seq_b7",
+    "seq_b8",
+    "seq_b9",
+    "seq_b10",
+    "seq_b11",
+    "seq_b12",
+    "seq_c1",
+    "seq_c2",
+    "seq_c3",
+    "seq_c4",
+    "seq_c5",
+    "seq_c6",
+    "seq_c7",
+    "seq_c8",
+    "seq_c9",
+    "seq_c10",
+    "seq_c11",
+    "seq_c12",
+    "seq_pc1",
+    "seq_pc2",
+    "seq_pc3",
+    "seq_pc4",
+    "seq_pc5",
+    "seq_pc6",
+    "seq_pc7",
+    "seq_pc8",
+    "seq_pc9",
+    "seq_pc10",
+    "seq_pc11",
+    "seq_pc12",
+    "seq_t1",
+    "seq_t2",
+    "seq_t3",
+    "seq_t4",
+    "seq_t5",
+    "seq_t6",
+    "seq_t7",
+    "seq_t8",
+    "seq_t9",
+    "seq_t10",
+    "seq_t11",
+    "seq_t12"
+   ]
+  },
+  {
+   "label": "SETUP",
+   "keys": [
+    "key_prio",
+    "pb_range",
+    "wheel_to",
+    "noise_floor",
+    "drift",
+    "sh_clock_def",
+    "sh_in_def"
+   ]
+  },
+  {
+   "label": "PATCH PANEL",
+   "keys": [
+    "volume",
+    "mom_switch"
+   ]
+  }
+ ]
+}
