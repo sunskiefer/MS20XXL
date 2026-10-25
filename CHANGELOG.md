@@ -9,6 +9,7 @@ Panel layout fixes, no change to the sound or to any parameter index (one parame
   names sit beside their switches, the A / B / C and PORTA / TRIG row names clear the first step knob.
 - The value of the control you move now shows in the top right corner of the header (name and value, e.g. "Swing  60 %");
   the value text that sat under every knob, on top of its name and scale, is gone.
+- One more factory patch, SQ-10 Self-Running (RUN on, WITH TRANSPORT off, so it sequences by itself on load): 63 patches.
 
 ## 0.1.0 (2026-10-24)
 First release. Korg MS-20-style semi-modular mono synth, circuit-modelled: KLM-307 (MK2) and KORG35 (MK1) filter
