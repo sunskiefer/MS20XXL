@@ -540,7 +540,13 @@ def view_panel(vkey, title):
         elif is_step_button(c):
             continue
         else:
-            text(d, (c["cx"], y - (30 if c["kind"] == "toggle" else 20)), short_name(c), 18)
+            if c["key"] == "seq_mode":
+                y = c["cy"] - c["sh"] // 2   # rows=2: cy is the first row's centre, the box hangs below it
+            if c["kind"] == "toggle" and c["view"] == "seq":
+                # the sequencer strip is full: the switch names sit beside their switches
+                text(d, (x + w + (39 if c["key"] == "seq_run" else 10), y + h / 2.0), short_name(c), 18, INK, "lm")
+            else:
+                text(d, (c["cx"], y - (30 if c["kind"] == "toggle" else 20)), short_name(c), 18)
             if c["kind"] == "enum" and c["widget"] == "popup":
                 d.rounded_rectangle([x * SS, y * SS, (x + w) * SS, (y + h) * SS], radius=6 * SS, fill=(18, 18, 18),
                                     outline=(130, 130, 130), width=2 * SS)
@@ -562,10 +568,10 @@ def seq_panel(d):
         text(d, (x, 140), "%d" % (i + 1), 17, INK)
     for row in ("a", "b", "c"):
         y = spec.SEQ_ROWS[row]
-        text(d, (spec.SEQ_X0 - 42, y), row.upper(), 26, INK)
-    text(d, (spec.SEQ_X0 - 42, spec.SEQ_PORTA_Y - 12), "PORTA", 15, DIM)
-    text(d, (spec.SEQ_X0 - 42, spec.SEQ_PORTA_Y + 8), "C", 18, INK)
-    text(d, (spec.SEQ_X0 - 42, spec.SEQ_TRIG_Y), "TRIG", 18, INK)
+        text(d, (spec.SEQ_X0 - 52, y), row.upper(), 26, INK)
+    text(d, (spec.SEQ_X0 - 52, spec.SEQ_PORTA_Y - 12), "PORTA", 15, DIM)
+    text(d, (spec.SEQ_X0 - 52, spec.SEQ_PORTA_Y + 8), "C", 18, INK)
+    text(d, (spec.SEQ_X0 - 52, spec.SEQ_TRIG_Y), "TRIG", 18, INK)
     d.line([(spec.SEQ_X0 - 30) * SS, 420 * SS, 1250 * SS, 420 * SS], fill=(90, 90, 90), width=2 * SS)
     d.line([(spec.SEQ_X0 - 30) * SS, 506 * SS, 1250 * SS, 506 * SS], fill=(90, 90, 90), width=2 * SS)
 
@@ -620,15 +626,15 @@ def arrow(d, p1, p2, head=True):
 def patch_diagram(d):
     """the MS-20's block diagram, drawn around the sockets in their panel positions (lines first, boxes on top)"""
     C, R = spec.COLS, spec.ROWS
-    y = 96
+    y = 86   # the chain sits clear above the row-0 jack names (they print at R[0]-36, so the boxes end at y=100)
     chain = [("VCO 1", C[0]), ("VCO 2", C[1]), ("MIXER", C[2]), ("HPF", C[3]), ("LPF", C[4]), ("VCA", C[5])]
     boxes = []   # (x, y, w, h, lines, size)
     # the signal path across the top, each block dropping to its jack
     for i, (lab, x) in enumerate(chain):
-        boxes.append((x, y, 76, 32, [lab], 16))
+        boxes.append((x, y, 76, 28, [lab], 16))
         if i:
             arrow(d, (chain[i - 1][1] + 38, y), (x - 38, y))
-        d.line([x * SS, (y + 16) * SS, x * SS, (R[0] - 24) * SS], fill=LINE, width=2 * SS)
+        d.line([x * SS, (y + 14) * SS, x * SS, (R[0] - 24) * SS], fill=LINE, width=2 * SS)
     arrow(d, (C[5] + 38, y), (C[8] - 2, y))
     d.line([C[8] * SS, y * SS, C[8] * SS, (R[0] - 24) * SS], fill=LINE, width=2 * SS)
     # MOD GEN between its two outs
@@ -650,7 +656,7 @@ def patch_diagram(d):
     arrow(d, (ex2, R[2]), (C[5] - 24, R[2]))
     boxes.append((ex2, R[1], 58, 44, ["EG 2"], 16))
     # KBD: CV out, trig out; its normals into VCO 1+2 CV IN and TRIG IN
-    kx, ky = (C[7] + C[8]) / 2 + 8, (R[1] + R[2]) / 2
+    kx, ky = (C[7] + C[8]) / 2 + 8, (R[1] + R[2]) / 2 - 24   # up, so TRIG OUT / TRIG IN print clear of it
     d.line([kx * SS, ky * SS, C[8] * SS, R[1] * SS], fill=LINE, width=2 * SS)
     d.line([kx * SS, ky * SS, C[8] * SS, R[2] * SS], fill=LINE, width=2 * SS)
     arrow(d, (C[8] - 24, R[1]), (C[7] + 24, R[1]))
@@ -717,6 +723,9 @@ def patch_sockets(d, dim_outs=False, dim_ins=False):
         is_out = key in outs
         lab = dict((o[0], o[1]) for o in spec.OUTS)[key] if is_out else dict((i[0], i[1]) for i in spec.INS)[key]
         dim = (dim_outs and is_out) or (dim_ins and not is_out)
+        # the name sits on its own patch of panel, so no drop line or arrow of the block diagram runs through it
+        bb = d.textbbox((x * SS, (y - 36) * SS), lab, font=font(16 * SS), anchor="mm")
+        d.rectangle([bb[0] - 3 * SS, bb[1] - SS, bb[2] + 3 * SS, bb[3] + SS], fill=PANEL)
         text(d, (x, y - 36), lab, 16, (120, 120, 120) if dim else (INK if is_out else YELLOW))
         hex_socket(d, x, y, dim=dim)
 
@@ -983,10 +992,10 @@ def main():
         restyle_trigger("shTrig_%s_" % k, w, h, "ms_%s_off.png" % k, "ms_%s_on.png" % k,
                         lambda inst, k=k, w=w, h=h: (navpos[k][0] - w // 2, navpos[k][1] - h // 2, w, h))
     st = spec.CTRL["seq_step_btn"]
-    nav_image("STEP", False, 120, 52).save(os.path.join(folder, "ms_step_off.png"))
-    nav_image("STEP", True, 120, 52).save(os.path.join(folder, "ms_step_on.png"))
-    restyle_trigger("shTrig_seq_step_btn_", 120, 52, "ms_step_off.png", "ms_step_on.png",
-                    lambda inst: (st["cx"] - 60, st["cy"] - 26, 120, 52))
+    nav_image("STEP", False, 96, 44).save(os.path.join(folder, "ms_step_off.png"))   # 96 x 44: the switch names beside the RUN / TRANSPORT switches need the room
+    nav_image("STEP", True, 96, 44).save(os.path.join(folder, "ms_step_on.png"))
+    restyle_trigger("shTrig_seq_step_btn_", 96, 44, "ms_step_off.png", "ms_step_on.png",
+                    lambda inst: (st["cx"] - 48, st["cy"] - 22, 96, 44))
     blank(4, 4).save(os.path.join(folder, "ms_blank.png"))
     pr = Image.new("RGBA", (spec.PICK_W, spec.PICK_H), (0, 0, 0, 0))
     pr.alpha_composite(ring_image(34), ((spec.PICK_W - 68) // 2, (spec.PICK_H - 68) // 2 - 2))
@@ -1044,9 +1053,9 @@ def main():
         injected.append(image_instance("LED", "ms_yled_on.png", x - 9, y - 9, 18, 18,
                                        ["IndexedEnabling/%d/7/Parameter %d" % (1 + i % 6, skin.index[key])]))
     rn = spec.CTRL["seq_run"]
-    injected.append(image_instance("LED", "ms_yled_off.png", rn["cx"] + 76 - 11, rn["cy"] - 11, 22, 22,
+    injected.append(image_instance("LED", "ms_yled_off.png", rn["cx"] + 62 - 11, rn["cy"] - 11, 22, 22,
                                    ["IndexedEnabling/%d/%d/Parameter %d" % (si, nviews, vidx)]))
-    injected.append(image_instance("LED", "ms_yled_on.png", rn["cx"] + 76 - 11, rn["cy"] - 11, 22, 22,
+    injected.append(image_instance("LED", "ms_yled_on.png", rn["cx"] + 62 - 11, rn["cy"] - 11, 22, 22,
                                    ["IndexedEnabling/1/2/Parameter %d" % skin.index["seq_running"]]))
     comps[1:1] = injected   # right after the base background: under every control
 

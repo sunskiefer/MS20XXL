@@ -72,7 +72,7 @@ def B(key, name, view, cx, cy, ms20=True):
 R1, R2 = 215, 455   # the two rows of knobs on a zoomed page (below the 70 px header)
 
 # the sequencer page: a left strip of its settings, then 12 columns of step knobs A, B, C and two rows of buttons
-SEQ_X0, SEQ_DX = 500, 64
+SEQ_X0, SEQ_DX = 520, 64   # 520: the A/B/C and PORTA/TRIG names (at SEQ_X0 - 52) clear the frame and the first knob
 SEQ_ROWS = {"a": 184, "b": 280, "c": 376}
 SEQ_PORTA_Y, SEQ_TRIG_Y = 459, 552
 SEQ_LEFT = [85, 220, 355]
@@ -144,18 +144,18 @@ CONTROLS = [
     K("seq_speed", "Clock Speed", 0, 10, 4, "seq", SEQ_LEFT[0], 168, r=40, ms20=False),
     K("seq_swing", "Swing", 50, 75, 50, "seq", SEQ_LEFT[1], 168, r=40, unit="%", intd=True, ms20=False),
     K("seq_gate", "Gate", 0, 10, 5, "seq", SEQ_LEFT[2], 168, r=40, ms20=False),
-    K("seq_length", "Sequence Length", 1, 12, 12, "seq", SEQ_LEFT[0], 300, r=36, intd=True, ms20=False),
-    K("seq_porta_ab", "Portamento A/B", 0, 10, 0, "seq", SEQ_LEFT[1], 300, r=36, ms20=False),
-    K("seq_porta_c", "Portamento C", 0, 10, 0, "seq", SEQ_LEFT[2], 300, r=36, ms20=False),
-    E("seq_sync", "Clock Sync", SYNC, 0, "seq", 120, 442, widget="popup", w=190, h=44, ms20=False),
-    E("seq_mode", "Sequence Mode", ["12 Loop", "12 Once", "24 Loop", "24 Once"], 0, "seq", 325, 446, sw=100, sh=38,
+    K("seq_length", "Sequence Length", 1, 12, 12, "seq", SEQ_LEFT[0], 316, r=36, intd=True, ms20=False),
+    K("seq_porta_ab", "Portamento A/B", 0, 10, 0, "seq", SEQ_LEFT[1], 316, r=36, ms20=False),
+    K("seq_porta_c", "Portamento C", 0, 10, 0, "seq", SEQ_LEFT[2], 316, r=36, ms20=False),
+    E("seq_sync", "Clock Sync", SYNC, 0, "seq", 120, 452, widget="popup", w=190, h=44, ms20=False),
+    E("seq_mode", "Sequence Mode", ["12 Loop", "12 Once", "24 Loop", "24 Once"], 0, "seq", 325, 445, sw=100, sh=32,   # rows=2: cy is the first row
       rows=2, ms20=False),
-    E("seq_range_a", "Channel A", ["+/-1 V", "+/-5 V"], 0, "seq", SEQ_LEFT[0], 532, sw=62, sh=40, ms20=False),
-    E("seq_range_b", "Channel B", ["+/-1 V", "+/-5 V"], 0, "seq", SEQ_LEFT[1] + 5, 532, sw=62, sh=40, ms20=False),
-    E("seq_range_c", "Channel C", ["0..+5 V", "+/-12 st"], 0, "seq", SEQ_LEFT[2] + 10, 532, sw=62, sh=40, ms20=False),
-    T("seq_run", "Run", 0, "seq", 90, 594, ms20=False),
-    T("seq_transport", "With Transport", 0, "seq", 245, 594, ms20=False),
-    B("seq_step_btn", "Step", "seq", 375, 594, ms20=False),
+    E("seq_range_a", "Channel A", ["+/-1 V", "+/-5 V"], 0, "seq", SEQ_LEFT[0], 548, sw=62, sh=40, ms20=False),
+    E("seq_range_b", "Channel B", ["+/-1 V", "+/-5 V"], 0, "seq", SEQ_LEFT[1] + 5, 548, sw=62, sh=40, ms20=False),
+    E("seq_range_c", "Channel C", ["0..+5 V", "+/-12 st"], 0, "seq", SEQ_LEFT[2] + 10, 548, sw=62, sh=40, ms20=False),
+    T("seq_run", "Run", 0, "seq", 62, 598, ms20=False),
+    T("seq_transport", "With Transport", 0, "seq", 235, 598, ms20=False),
+    B("seq_step_btn", "Step", "seq", 570, 598, ms20=False),
     *[K("seq_a%d" % (i + 1), "A %d" % (i + 1), -5, 5, 0, "seq", SEQ_X0 + i * SEQ_DX, SEQ_ROWS["a"], r=STEP, ms20=False)
       for i in range(12)],
     *[K("seq_b%d" % (i + 1), "B %d" % (i + 1), -5, 5, 0, "seq", SEQ_X0 + i * SEQ_DX, SEQ_ROWS["b"], r=STEP, ms20=False)

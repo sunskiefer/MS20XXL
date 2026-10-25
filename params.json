@@ -4261,6 +4261,14 @@
     "On"
    ],
    "default": 0
+  },
+  {
+   "key": "touch_info",
+   "name": "Touch Info",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
   }
  ],
  "sections": [

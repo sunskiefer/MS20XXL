@@ -84,6 +84,9 @@ def build_params():
     P.append({"key": "seq_step_lo", "name": "Seq Step 1-6", "options": ["-"] + ["%d" % (i + 1) for i in range(6)], "default": 0})
     P.append({"key": "seq_step_hi", "name": "Seq Step 7-12", "options": ["-"] + ["%d" % (i + 7) for i in range(6)], "default": 0})
     P.append({"key": "seq_running", "name": "Seq Running", "options": spec.OFF_ON, "default": 0})
+    # touch_info (last, so no existing parameter index moves): the name and value of the control just moved, printed in the page header's right-hand corner
+    # (the knobs carry no value text of their own: it sat on the printed names and the scale)
+    P.append({"key": "touch_info", "name": "Touch Info", "min": 0.0, "max": 0.0, "default": 0.0, "display": "string"})
     keys = [p["key"] for p in P]
     assert len(keys) == len(set(keys)), "duplicate keys"
     return P
@@ -226,8 +229,10 @@ def layout_line(c):
     x, y = c["cx"], c["cy"] + Y0
     if c["kind"] == "knob":
         bw = 150 if c["r"] >= 46 else 118 if c["r"] >= 36 else 62
-        return 'knob cx=%d cy=%d r=%d label="%s" key=%s ns=0 vs=%d bw=%d %s' % (
-            x, y, c["r"], c["name"].upper(), c["key"], 24 if c["r"] >= 40 else 18, bw, v)
+        # the framework always adds a value label under a knob; vs=1 in the panel colour (ink_dim) leaves it invisible,
+        # the value is read in the top right corner (touch_info)
+        return 'knob cx=%d cy=%d r=%d label="%s" key=%s ns=0 vs=1 ink_dim=1c1c1c bw=%d %s' % (
+            x, y, c["r"], c["name"].upper(), c["key"], bw, v)
     if c["kind"] == "toggle":
         step = re.match(r"seq_(t|pc)\d+$", c["key"]) is not None   # the sequencer's per-step buttons are narrow
         return 'toggle cx=%d cy=%d label="%s" key=%s bw=%d ns=0 %s' % (x, y, c["name"].upper(), c["key"], 60 if step else 130, v)
@@ -260,6 +265,7 @@ def write_layout():
     L.append('button cx=%d cy=%d label="DONE" key=pk_done when=pk:4' % (
         spec.PK_DONE[0] + spec.PK_DONE[2] // 2, spec.PK_DONE[1] + spec.PK_DONE[3] // 2 + Y0))
     L.append('readout cx=850 cy=%d w=500 h=50 label="" key=patch_info when=view:%d' % (38 + Y0, spec.VIEW_KEYS.index('patch')))
+    L.append('readout cx=1055 cy=%d w=420 h=50 label="" key=touch_info tsize=30 talign=right when=in_sec:1' % (38 + Y0))
     for c in spec.CONTROLS:
         L.append(layout_line(c))
     L.append('qlinks "MS20XXL" = ' + ",".join("ql%d" % (i + 1) for i in range(16)))

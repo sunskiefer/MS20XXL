@@ -1,4 +1,4 @@
-# MS20XXL v0.1.0
+# MS20XXL v0.1.1
 
 **A Korg MS-20-style semi-modular monophonic synthesizer for MPC OS on the Akai Force, circuit-modelled from the
 MS-20's schematics, with the whole panel on a tap-to-zoom overview, a patch panel you patch by touch, and an SQ-10-style
@@ -13,7 +13,7 @@ was sold beside it: three channels of twelve steps, 12- or 24-step modes, loop o
 portamento, and its outputs on the patch panel so you patch it into the synth like the real pair.
 
 > [!NOTE]
-> **Status: 0.1.0.** First release. Passes its engine, host and UI tests on x86 under ASan and UBSan (1625 engine checks:
+> **Status: 0.1.1.** 0.1.0 was tested on a Force (MPC OS 3.9.1); 0.1.1 is its panel-layout fix (see the CHANGELOG), built for the Force and not yet re-tested there. First release notes: Passes its engine, host and UI tests on x86 under ASan and UBSan (1625 engine checks:
 > every control swept, every one of the 560 cables patched, both filters self-oscillating, Hz/V pitch tracking, the
 > sequencer). Not yet checked on a Force: the patching method and the page system are PS3100XXL 0.1.5's, which were.
 

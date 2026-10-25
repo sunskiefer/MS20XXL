@@ -52,6 +52,7 @@ struct Synth {
   int src[N_INS];                   // input -> output feeding it, -1 = none (derived from dest)
   unsigned rev = 1;                 // display_rev
   char info[128];
+  char touch[96];                   // the header's top-right readout: the control just moved and its value
   bool pop_open[N_POPS] = {};
 
   // patch panel values, this sample
@@ -440,6 +441,7 @@ struct Synth {
     if (v < 0 || v >= N_VIEWS || v == view) return;
     view = v;
     close_pops();
+    touch[0] = 0;
     held = held_in = -1;
     pk = v == V_PATCH ? 1 : 0;
     if (pk) snprintf(info, sizeof info, "Tap a jack. Then tap the other end of the cable.");
@@ -558,6 +560,18 @@ struct Synth {
                            *u ? " " : "", u);
     else if (p == P_VCO2_PITCH) snprintf(buf, n, "%+.1f st", v * 2.4f);
     else snprintf(buf, n, "%.1f%s%s", v, *u ? " " : "", u);
+  }
+
+  // the control just moved, named with its value, for the top right corner (on the patch page it uses the page's own line)
+  void note_touch(int p) {
+    char val[48];
+    display(p, val, sizeof val);
+    if (view == V_PATCH) {
+      if (pk == 0 || pk == 1) snprintf(info, sizeof info, "%s  %s", P_NAME[p], val);
+    } else {
+      snprintf(touch, sizeof touch, "%s  %s", P_NAME[p], val);
+    }
+    bump();
   }
 
   // ---- state ---------------------------------------------------------------------------------------------------------------
@@ -686,7 +700,9 @@ void set_param(void *inst, const char *key, const char *val) {
   int p = find_key(key);
   if (p < 0) return;
   if (p < N_CONTROLS) {
+    float before = s->pv[p];
     set_control(s, p, v);
+    if (s->pv[p] != before && p != P_SEQ_STEP_BTN) s->note_touch(p);
     s->bump();                              // the Q-Link knob mirroring it moves too
     return;
   }
@@ -722,7 +738,9 @@ void set_param(void *inst, const char *key, const char *val) {
     int t = s->ql_target(p - P_QL1);
     if (t < 0) return;
     float x = clampf(v, 0, 1);
+    float before = s->pv[t];
     set_control(s, t, P_MIN[t] + x * (P_MAX[t] - P_MIN[t]));
+    if (s->pv[t] != before) s->note_touch(t);
     s->bump();
     return;
   }
@@ -769,6 +787,7 @@ int get_param(void *inst, const char *key, char *buf, int n) {
   if (p > P_IN_SEC && p <= P_IN_SEC + N_POPS) return snprintf(buf, n, "%d", s->pop_open[p - P_IN_SEC - 1] ? 1 : 0);
   if (p >= P_PT_MG_TRI && p < P_PT_MG_TRI + N_OUTS) return snprintf(buf, n, "%d", s->dest[p - P_PT_MG_TRI] + 1);
   if (p == P_PATCH_INFO) return snprintf(buf, n, "%s", s->info);
+  if (p == P_TOUCH_INFO) return snprintf(buf, n, "%s", s->touch);
   if (p == P_ESP_PEAK) return snprintf(buf, n, "%d", s->esp_peak_lamp && s->view == V_ESP ? 1 : 0);
   if (p == P_SEQ_STEP_LO) return snprintf(buf, n, "%d", s->view == V_SEQ && s->seq_lamp >= 1 && s->seq_lamp <= 6 ? s->seq_lamp : 0);
   if (p == P_SEQ_STEP_HI) return snprintf(buf, n, "%d", s->view == V_SEQ && s->seq_lamp >= 7 ? s->seq_lamp - 6 : 0);

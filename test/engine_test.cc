@@ -92,6 +92,15 @@ int main() {
   for (int v = 0; v < N_VIEWS; v++)
     for (int i = 0; i < 16; i++) CHECK(VIEW_QLINKS[v][i] < N_CONTROLS, "Q-Link targets are sound controls");
 
+  // ---- the header's top right readout: the control just moved, with its value; gone on a page change
+  set(s, "go_seq", "1");
+  CHECK(get(s, "touch_info").empty(), "a page change clears the readout ('%s')", get(s, "touch_info").c_str());
+  set(s, "seq_swing", "60");
+  CHECK(get(s, "touch_info").find("Swing") != std::string::npos && get(s, "touch_info").find("60") != std::string::npos,
+        "moving SWING reads 'Swing  60 %%' ('%s')", get(s, "touch_info").c_str());
+  set(s, "go_patch", "1");
+  CHECK(get(s, "touch_info").empty(), "off the sequencer page the readout is empty again");
+
   // ---- patching, by pages: tap a jack, tap the other end, the cable has its own page
   unsigned rev0 = (unsigned)geti(s, "display_rev");
   CHECK(geti(s, "pk") == 1 && geti(s, "pk_t") == 1 && geti(s, "pk_c") == 0, "the patch page opens on the choose step");

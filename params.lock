@@ -338,3 +338,4 @@ esp_peak
 seq_step_lo
 seq_step_hi
 seq_running
+touch_info
