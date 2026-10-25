@@ -162,6 +162,14 @@ PRESETS = [
                             lpf_peak=5, lpf_eg2=6, eg2_decay=3, eg2_sustain=4, seq_speed=5, seq_gate=3,
                             seq_transport=1, volume=7),
      {"seq_trig": "sh_clock", "white": "sh_in", "sh_out": "total", "seq_c": "lpf_cv"}),
+    # RUN on, WITH TRANSPORT off: the sequencer plays by itself the moment the patch loads, with no key and no Force play
+    ("SQ-10 Self-Running", P(vco1_wave=SAW, vco1_scale=S16, vco1_level=10, vco2_wave=SQUARE2, vco2_scale=T16,
+                             vco2_level=5, lpf_cutoff=3, lpf_peak=7, lpf_eg2=6, eg2_attack=0, eg2_decay=2.5,
+                             eg2_sustain=2, eg2_release=1, fm_mg=10, seq_speed=5.5, seq_gate=4, seq_length=8,
+                             seq_mode=0, seq_range_a=0, seq_a1=0, seq_a2=0, seq_a3=1.5, seq_a4=0, seq_a5=-1.5,
+                             seq_a6=0, seq_a7=2.5, seq_a8=3, seq_range_b=0, seq_b1=0, seq_b2=1, seq_b3=3, seq_b4=0,
+                             seq_b5=2, seq_b6=0, seq_b7=4, seq_b8=1, seq_run=1, seq_transport=0, volume=7),
+     {"seq_a": "total", "seq_trig": "trig_in", "seq_b": "lpf_cv"}),
     # ---- bass (in the spirit of the patch book's bass category)
     ("Fat Sub Bass", P(vco1_wave=SAW, vco1_scale=S32, vco1_level=10, vco2_wave=SQUARE2, vco2_scale=T16, vco2_pitch=0.1,
                        vco2_level=7, lpf_cutoff=3.5, lpf_peak=2, lpf_eg2=4, eg2_attack=0, eg2_decay=4, eg2_sustain=6,

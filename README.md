@@ -65,7 +65,7 @@ No Korg code is used. The engine is written from the circuit, and the circuit is
   tap an option. Tap the value itself to put it on the data wheel and a Q-Link.
 - **Q-Links:** the 16 Q-Links follow the section on screen (on the overview: the main sound controls; on the sequencer
   page: clock, swing, gate, length and the twelve knobs of channel A).
-- **Presets:** 62 factory patches in MPC's PRESET menu, **cables included**: a patch loads its settings and its cords.
+- **Presets:** 63 factory patches in MPC's PRESET menu, **cables included**: a patch loads its settings and its cords.
   They include Korg's own "MS-20 Settings Examples" (trumpet, clarinet, oboe, saxophone, flutes, growling bass, the
   arpeggiators, steel drum, comic death tuba, ludicrous harmonica, delayed S&H, bathysphere, monstrous tuned static),
   bass, drum, keyboard, lead and sound-effect patches, and sequencer patches wired like an MS-20 + SQ-10 pair.
