@@ -91,6 +91,8 @@ struct Synth {
   float sig_out = 0;                // last sample's output in volts (SIGNAL OUT jack, one sample late)
   bool esp_peak_lamp = false;
   int seq_lamp = 0;
+  bool seq_run_lamp = false;
+  int nav_cool = 0;                 // frames left in which a repeated < or > press is ignored (one tap, one page)
 
   void init() {
     for (int i = 0; i < P_COUNT; i++) pv[i] = P_DEF[i];
@@ -325,6 +327,7 @@ struct Synth {
 
   void render(int16_t *out, int frames) {
     ScopedDenormalDisable dg;
+    if (nav_cool > 0) nav_cool -= frames;
     begin_block();
     float tgt_vol = powf(pv[P_VOLUME] * 0.1f, 1.6f) * 1.6f;   // VOLUME 7 ~ -7 dBFS peaks, 10 a touch under full scale
     float noise_amt = pv[P_NOISE_FLOOR] * 0.1f * 0.0012f;
@@ -430,10 +433,14 @@ struct Synth {
       out[n * 2] = (int16_t)(a > 32767.0f ? 32767 : a < -32768.0f ? -32768 : lrintf(a));
       out[n * 2 + 1] = (int16_t)(b > 32767.0f ? 32767 : b < -32768.0f ? -32768 : lrintf(b));
     }
-    // lamps (polled by the screen)
+    // lamps (polled by the screen). The wrapper (HAS_DISPLAY_REV) only re-reads the lamp parameters when display_rev
+    // changes, so a lamp change must bump it, or the step lamps never move while the sequencer runs by itself.
     bool pk_lamp = esp.peak;
     int lamp = seq.running ? seq.lit_step + 1 : 0;
-    if (pk_lamp != esp_peak_lamp || lamp != seq_lamp) { esp_peak_lamp = pk_lamp; seq_lamp = lamp; }
+    if (pk_lamp != esp_peak_lamp || lamp != seq_lamp || seq.running != seq_run_lamp) {
+      esp_peak_lamp = pk_lamp; seq_lamp = lamp; seq_run_lamp = seq.running;
+      bump();
+    }
   }
 
   // ---- UI: views, jacks, Q-Links -----------------------------------------------------------------------------------------
@@ -723,6 +730,10 @@ void set_param(void *inst, const char *key, const char *val) {
   }
   if (p == P_NAV_ZOOM) { s->set_view(V_OVERVIEW); return; }
   if (p == P_NAV_PREV || p == P_NAV_NEXT) {
+    // One tap must step one page. A press reaching the engine twice (the host repeating a write) stepped two and
+    // skipped a page, so a second < or > inside 120 ms of the first is dropped; real taps are further apart.
+    if (s->nav_cool > 0) return;
+    s->nav_cool = (int)(0.12f * SR);
     int v2 = s->view <= 0 ? 1 : s->view + (p == P_NAV_NEXT ? 1 : -1);
     if (v2 < 1) v2 = N_VIEWS - 1;
     if (v2 >= N_VIEWS) v2 = 1;

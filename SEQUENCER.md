@@ -1,6 +1,6 @@
 # MS20XXL sequencer manual
 
-The SQ-10-style sequencer page of MS20XXL 0.1.1. It runs the moment you switch RUN on, with no cables needed; the lamps step along the top row while it runs. Written from the plugin's source and panel.
+The SQ-10-style sequencer page of MS20XXL 0.1.2. It runs the moment you switch RUN on, with no cables needed; the lamps step along the top row while it runs. Written from the plugin's source and panel.
 
 ## Quick start
 

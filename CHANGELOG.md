@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 (2026-10-27)
+Two fixes, no change to the sound or to any parameter index.
+- Sequencer step lamps: they now follow the sequencer while it runs. The engine moved the lamps without telling the
+  wrapper's display poll, so the lit step froze on whatever the last screen change showed (and showed nothing at all
+  when it was started from the Force play button). The lit step and the RUN lamp now report every change.
+- Page arrows < and >: a press that reached the engine twice stepped two pages and skipped one. A second < or > within
+  120 ms of the first is now ignored, so one tap is one page. Built for the Force, not yet re-tested there.
+
 ## 0.1.1 (2026-10-25)
 Panel layout fixes, no change to the sound or to any parameter index (one parameter, Touch Info, is added at the end).
 - Patch panel: the signal-chain boxes (VCO 1 ... VCA) no longer sit on the yellow jack names, the block-diagram lines no

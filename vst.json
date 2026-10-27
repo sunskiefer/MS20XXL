@@ -2,7 +2,7 @@
   "name": "MS20XXL",
   "vendor": "L'Cronx",
   "uid": "Ms20",
-  "version": 101,
+  "version": 102,
   "so": "ms20xxl.so",
   "params": "params.json",
   "build": {

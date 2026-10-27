@@ -71,10 +71,14 @@ int main() {
   CHECK(geti(s, "view") == V_VCF, "go_vcf zooms in (%d)", geti(s, "view"));
   set(s, "nav_next", "1");
   CHECK(geti(s, "view") == V_MOD, "next steps to modulation");
+  set(s, "nav_next", "1");   // the same press arriving again at once must not skip a page
+  CHECK(geti(s, "view") == V_MOD, "a repeated > inside 120 ms is ignored (%d)", geti(s, "view"));
+  render(s, 50);             // 50 blocks of 128 frames, about 145 ms
+  set(s, "nav_prev", "1"); render(s, 50); set(s, "nav_prev", "1"); render(s, 50);
+  CHECK(geti(s, "view") == V_VCO, "prev twice, a real tap apart: oscillators");
   set(s, "nav_prev", "1"); set(s, "nav_prev", "1");
-  CHECK(geti(s, "view") == V_VCO, "prev twice: oscillators");
-  set(s, "nav_prev", "1");
-  CHECK(geti(s, "view") == N_VIEWS - 1, "prev wraps to the last section");
+  render(s, 50);
+  CHECK(geti(s, "view") == N_VIEWS - 1, "prev wraps to the last section, and only one page back");
   set(s, "nav_zoom", "1");
   CHECK(geti(s, "view") == V_OVERVIEW, "OVERVIEW returns");
   set(s, "go_vcf", "0");
