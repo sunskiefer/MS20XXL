@@ -71,14 +71,20 @@ int main() {
   CHECK(geti(s, "view") == V_VCF, "go_vcf zooms in (%d)", geti(s, "view"));
   set(s, "nav_next", "1");
   CHECK(geti(s, "view") == V_MOD, "next steps to modulation");
-  set(s, "nav_next", "1");   // the same press arriving again at once must not skip a page
-  CHECK(geti(s, "view") == V_MOD, "a repeated > inside 120 ms is ignored (%d)", geti(s, "view"));
-  render(s, 50);             // 50 blocks of 128 frames, about 145 ms
-  set(s, "nav_prev", "1"); render(s, 50); set(s, "nav_prev", "1"); render(s, 50);
-  CHECK(geti(s, "view") == V_VCO, "prev twice, a real tap apart: oscillators");
-  set(s, "nav_prev", "1"); set(s, "nav_prev", "1");
-  render(s, 50);
-  CHECK(geti(s, "view") == N_VIEWS - 1, "prev wraps to the last section, and only one page back");
+  {   // the arrows' timing runs on an engine of its own: rendering on s would move the state the later tests rely on
+    void *n = E->create(nullptr);
+    set(n, "go_vcf", "1"); set(n, "nav_next", "1");
+    CHECK(geti(n, "view") == V_MOD, "next steps to modulation (second engine)");
+    set(n, "nav_next", "1");   // the same press arriving again at once must not skip a page
+    CHECK(geti(n, "view") == V_MOD, "a repeated > inside 120 ms is ignored (%d)", geti(n, "view"));
+    render(n, 50);             // 50 blocks of 128 frames, about 145 ms
+    set(n, "nav_prev", "1"); render(n, 50); set(n, "nav_prev", "1"); render(n, 50);
+    CHECK(geti(n, "view") == V_VCO, "prev twice, a real tap apart: oscillators (%d)", geti(n, "view"));
+    set(n, "nav_prev", "1"); set(n, "nav_prev", "1");
+    render(n, 50);
+    CHECK(geti(n, "view") == N_VIEWS - 1, "prev wraps to the last section, one page back only (%d)", geti(n, "view"));
+    E->destroy(n);
+  }
   set(s, "nav_zoom", "1");
   CHECK(geti(s, "view") == V_OVERVIEW, "OVERVIEW returns");
   set(s, "go_vcf", "0");
