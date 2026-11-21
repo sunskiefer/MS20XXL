@@ -1,3 +1,5 @@
 [
-  { "version": "0.1.0", "device": "Force", "firmware": "3.9.1", "date": "2026-10-24" }
+  { "version": "0.1.0", "device": "Force", "firmware": "3.9.1", "date": "2026-10-24" },
+  { "version": "0.2.0", "device": "Force", "firmware": "3.9.1", "date": "2026-11-21" },
+  { "version": "0.2.0", "device": "MPC Live III", "firmware": "3.10.1", "date": "2026-11-21" }
 ]

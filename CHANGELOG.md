@@ -2,7 +2,7 @@
 
 ## 0.2.0 (2026-11-21)
 MS20XXL for the 64-bit MPCs and for Akai's plugin folder format (MPC OS 3.10.1). Same sound, panel, patches and
-parameters as 0.1.2. **Not tried on a device yet**: checked offline only (2026-11-21).
+parameters as 0.1.2. Tested on an Akai Force (MPC OS 3.9.1) and an MPC Live III (MPC OS 3.10.1), 2026-11-21.
 - **A 64-bit build** for the 64-bit MPCs (MPC Live III, XL, One G2, Key G2 and later). The 32-bit build (Force, MPC X,
   Live, Live II, One, Key 61 / 37) is the same code.
 - **Three zips per release**, made with the Open MPC catalog's release tools (`third_party/open-mpc-release`):
