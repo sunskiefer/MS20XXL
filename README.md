@@ -1,4 +1,4 @@
-# MS20XXL v0.1.2
+# MS20XXL v0.2.0
 
 **A Korg MS-20-style semi-modular monophonic synthesizer for MPC OS on the Akai Force, circuit-modelled from the
 MS-20's schematics, with the whole panel on a tap-to-zoom overview, a patch panel you patch by touch, and an SQ-10-style
@@ -13,7 +13,7 @@ was sold beside it: three channels of twelve steps, 12- or 24-step modes, loop o
 portamento, and its outputs on the patch panel so you patch it into the synth like the real pair.
 
 > [!NOTE]
-> **Status: 0.1.2.** 0.1.0 was tested on a Force (MPC OS 3.9.1); 0.1.2 fixes the sequencer step lamps and the page arrows on top of the 0.1.1 panel layout (see the CHANGELOG), built for the Force and not yet re-tested there. First release notes: Passes its engine, host and UI tests on x86 under ASan and UBSan (1625 engine checks:
+> **Status: 0.2.0.** 0.2.0 adds a build for the 64-bit MPCs (Live III, XL, One G2, Key G2) and a zip in Akai's plugin folder format for MPC OS 3.10.1, beside the Force / 32-bit build; same sound, panel and patches as 0.1.2, checked offline only (2026-11-21), not yet tried on a device. 0.1.0 was tested on a Force (MPC OS 3.9.1); 0.1.2 fixes the sequencer step lamps and the page arrows on top of the 0.1.1 panel layout (see the CHANGELOG), built for the Force and not yet re-tested there. First release notes: Passes its engine, host and UI tests on x86 under ASan and UBSan (1625 engine checks:
 > every control swept, every one of the 560 cables patched, both filters self-oscillating, Hz/V pitch tracking, the
 > sequencer). Not yet checked on a Force: the patching method and the page system are PS3100XXL 0.1.5's, which were.
 
@@ -117,7 +117,12 @@ Some things to try, straight from the Korg settings sheets:
 
 ## Install
 
-Download the zip from Releases and follow its `INSTALL.md` (the installer stops and restarts MPC).
+Download the zip for your machine from Releases:
+
+- `MS20XXL-<version>-mpc-armv7.zip`: Force and the 32-bit MPCs (MPC X, Live, Live II, One, Key 61 / 37). Follow its
+  `INSTALL.md` (the installer stops and restarts MPC).
+- `MS20XXL-<version>-mpc-aarch64.zip`: the 64-bit MPCs (MPC Live III, XL, One G2, Key G2). Same `INSTALL.md`.
+- `MS20XXL-<version>-mpc-sdk.zip`: any MPC on MPC OS 3.10.1 or later. Copy the folder inside into `VST2 Plugins`.
 
 ## Build
 

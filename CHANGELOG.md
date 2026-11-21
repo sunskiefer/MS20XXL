@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0 (2026-11-21)
+MS20XXL for the 64-bit MPCs and for Akai's plugin folder format (MPC OS 3.10.1). Same sound, panel, patches and
+parameters as 0.1.2. **Not tried on a device yet**: checked offline only (2026-11-21).
+- **A 64-bit build** for the 64-bit MPCs (MPC Live III, XL, One G2, Key G2 and later). The 32-bit build (Force, MPC X,
+  Live, Live II, One, Key 61 / 37) is the same code.
+- **Three zips per release**, made with the Open MPC catalog's release tools (`third_party/open-mpc-release`):
+  `MS20XXL-0.2.0-mpc-armv7.zip` (Force and the 32-bit MPCs, with `install.sh`, as before),
+  `MS20XXL-0.2.0-mpc-aarch64.zip` (the 64-bit MPCs, with `install.sh`) and `MS20XXL-0.2.0-mpc-sdk.zip` (one folder with
+  `plugin.json` and both binaries for every MPC on MPC OS 3.10.1 or later: copy it into `VST2 Plugins`, no mod needed).
+- The 0.1.2 release stays available as it is.
+
 ## 0.1.2 (2026-10-27)
 Two fixes, no change to the sound or to any parameter index.
 - Sequencer step lamps: they now follow the sequencer while it runs. The engine moved the lamps without telling the

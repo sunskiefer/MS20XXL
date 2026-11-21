@@ -1,6 +1,6 @@
-# MS20XXL: every push builds the plugin (armv7) and the skin, runs the offline tests, packages the release zip,
-# checks it (catalog_check + `sh -n` on install.sh/uninstall.sh, the L'Cronx apostrophe) and keeps it as a run
-# artifact. "Run workflow" with a version also publishes the GitHub release with that zip: pushing a v* tag does the same.
+# MS20XXL: every push builds the plugin (armv7 and aarch64) and the skin, runs the offline tests, packages the release zips,
+# checks them (catalog_check + `sh -n` on install.sh/uninstall.sh, the L'Cronx apostrophe) and keeps them as a run
+# artifact. "Run workflow" with a version also publishes the GitHub release with those zips: pushing a v* tag does the same.
 name: build
 
 on:
@@ -33,18 +33,27 @@ jobs:
         run: ./build.sh
       - name: Offline tests (engine under ASan/UBSan, host test)
         run: bash test/run_tests.sh
+      # 0.2.0: the zips as the Open MPC catalog reads them, made with the open-mpc release tools (third_party/open-mpc-release,
+      # with the L'Cronx apostrophe shell-escaped): -mpc-armv7.zip (Force and the 32-bit MPCs), -mpc-aarch64.zip (the 64-bit
+      # MPCs) and -mpc-sdk.zip (Akai's one-folder format, MPC OS 3.10.1 or later).
       - name: Package
         run: |
           V="${{ inputs.version }}"; [ "$GITHUB_REF_TYPE" = tag ] && V="${GITHUB_REF_NAME#v}"; V="${V:-0.0.${GITHUB_RUN_NUMBER}}"; echo "VERSION=$V" >> "$GITHUB_ENV"   # catalog versions are X.Y.Z; CI-only builds are 0.0.<run>
-          python3 third_party/mpc-vst-plugins/tools/release.py --so build/arm/ms20xxl.so \
-            --skin "build/package/L'Cronx - VST - MS20XXL" --entry build/pluginlist-entry.xml --version "$V" \
-            --about "Korg MS-20-style semi-modular mono synth, circuit-modelled from the MS-20 schematics, with an SQ-10-style step sequencer and a touch patch panel" \
-            --repo sunskiefer/MS20XXL --license GPL-3.0-or-later --id ms20xxl -o dist
-          python3 third_party/mpc-vst-plugins/tools/catalog_check.py dist/*.zip --catalog
+          for A in arm arm64; do
+            python3 third_party/open-mpc-release/release.py --so build/$A/ms20xxl.so \
+              --skin "build/skin/L'Cronx - VST - MS20XXL" --entry build/pluginlist-entry.xml --version "$V" \
+              --about "Korg MS-20-style semi-modular mono synth, circuit-modelled from the MS-20 schematics, with an SQ-10-style step sequencer and a touch patch panel" \
+              --repo sunskiefer/MS20XXL --license GPL-3.0-or-later --id ms20xxl -o dist
+          done
+          python3 third_party/open-mpc-release/sdk_zip.py "dist/MS20XXL-$V-mpc-sdk.zip" "dist/MS20XXL-$V-mpc-armv7.zip" "dist/MS20XXL-$V-mpc-aarch64.zip"
+          python3 third_party/open-mpc-release/catalog_check.py dist/*-mpc-armv7.zip --catalog
+          python3 third_party/open-mpc-release/catalog_check.py dist/*-mpc-aarch64.zip --catalog
+          # a version not yet in tested.json (not tried on a device) is published as a pre-release
+          python3 -c "import json,sys; print('PRERELEASE=' + ('false' if any(e['version']==sys.argv[1] for e in json.load(open('tested.json'))) else 'true'))" "$V" >> "$GITHUB_ENV"
       - name: Installer syntax (sh -n) and the L'Cronx apostrophe
         run: |
           set -e
-          for z in dist/*.zip; do
+          for z in dist/*-mpc-armv7.zip dist/*-mpc-aarch64.zip; do
             d=$(mktemp -d); unzip -q "$z" -d "$d"
             find "$d" \( -name install.sh -o -name uninstall.sh \) -print0 | while IFS= read -r -d '' s; do
               sh -n "$s" && echo "sh -n OK: $s"
@@ -63,8 +72,7 @@ jobs:
           tag_name: v${{ env.VERSION }}
           target_commitish: ${{ github.sha }}
           name: MS20XXL ${{ env.VERSION }}
-          make_latest: true
-          prerelease: false
+          prerelease: ${{ env.PRERELEASE }}
           draft: false
-          files: dist/*-mpc-armv7.zip
-          body: "MS20XXL for Force / MPC OS by L'Cronx. Install: unzip, run install.sh (INSTALL.md inside), or use the MPC plugin installer."
+          files: dist/*.zip
+          body: "MS20XXL for Force / MPC OS by L'Cronx. -mpc-armv7.zip: Force and the 32-bit MPCs. -mpc-aarch64.zip: the 64-bit MPCs (Live III, XL, One G2, Key G2). Install either: unzip, run install.sh (INSTALL.md inside), or use the MPC plugin installer. -mpc-sdk.zip: MPC OS 3.10.1 or later, any MPC: copy the folder into VST2 Plugins."
